@@ -12,7 +12,7 @@
 	<artifactId>fstail-admin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>fstail-admin</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Sistema de gestión de clientes, proyectos y mantenimientos.</description>
 	<url/>
 	<licenses>
 		<license/>
