@@ -30,6 +30,7 @@ public class Informe {
 
     //Contrutors arg and all
 
+
  public Informe() {
     }
 
@@ -83,6 +84,14 @@ public class Informe {
 
     public void setPdfFile(String pdfFile) {
         this.pdfFile = pdfFile;
+    }
+    
+ public Proyecto getProject() {
+        return project;
+    }
+
+    public void setProject(Proyecto project) {
+        this.project = project;
     }
     
 }

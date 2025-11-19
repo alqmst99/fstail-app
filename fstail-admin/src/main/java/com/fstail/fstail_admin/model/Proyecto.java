@@ -1,6 +1,7 @@
 package com.fstail.fstail_admin.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -33,12 +34,14 @@ public class Proyecto {
     private Cliente client;
 
     // one to one maintance per projects
-    @OneToOne(mappedBy = "project", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "project", cascade  = CascadeType.ALL)
     private Mantenimiento maintence;
 
     // one to many one project many informs
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
-    private Informe inform;
+    private List<Informe> inform;
+
+
 
     // contructor arg and all
     public Proyecto() {
@@ -112,12 +115,11 @@ public class Proyecto {
         this.maintence = maintence;
     }
 
-    public Informe getInform() {
+    public List<Informe> getInform() {
         return inform;
     }
 
-    public void setInform(Informe inform) {
+    public void setInform(List<Informe> inform) {
         this.inform = inform;
     }
-
 }
