@@ -15,8 +15,8 @@ public class Mantenimiento {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String planType;
-    private double monthPrice;
+    private String tipoPlan;
+    private double precioMes;
     private boolean active;
 
 
@@ -26,10 +26,10 @@ public class Mantenimiento {
     private Proyecto project;
  
     //constructors arg and all
-        public Mantenimiento(Long id, String planType, double monthPrice, boolean active) {
+        public Mantenimiento(Long id, String tipoPlan, double precioMes, boolean active) {
         this.id = id;
-        this.planType = planType;
-        this.monthPrice = monthPrice;
+        this.tipoPlan = tipoPlan;
+        this.precioMes = precioMes;
         this.active = active;
     }
 
@@ -51,23 +51,23 @@ public class Mantenimiento {
     }
 
 
-    public String getPlanType() {
-        return planType;
+    public String getTipoPlan() {
+        return tipoPlan;
     }
 
 
-    public void setPlanType(String planType) {
-        this.planType = planType;
+    public void setTipoPlan(String tipoPlan) {
+        this.tipoPlan = tipoPlan;
     }
 
 
-    public double getMonthPrice() {
-        return monthPrice;
+    public double getPrecioMes() {
+        return precioMes;
     }
 
 
-    public void setMonthPrice(double monthPrice) {
-        this.monthPrice = monthPrice;
+    public void setPrecioMes(double precioMes) {
+        this.precioMes = precioMes;
     }
 
 

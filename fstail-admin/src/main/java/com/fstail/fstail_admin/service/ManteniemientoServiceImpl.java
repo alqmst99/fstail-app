@@ -10,7 +10,7 @@ import com.fstail.fstail_admin.model.Proyecto;
 import com.fstail.fstail_admin.repository.MantenimientoRepo;
 
 @Service
-public class ManteniemientoServiceImpl {
+public class ManteniemientoServiceImpl implements MantenimientoService{
     
     private final MantenimientoRepo mantRepo;
 
@@ -18,37 +18,43 @@ public class ManteniemientoServiceImpl {
         this.mantRepo= mantRepo;
     }
 
-    public Mantenimiento createMant(Mantenimiento mant){
+    @Override
+    public Mantenimiento crearMantenimiento(Mantenimiento mant){
         return mantRepo.save(mant);
     }
 
 
-    public Optional<Mantenimiento> findById (Long id){
+    @Override
+    public Optional<Mantenimiento> findMantById (Long id){
         return mantRepo.findById(id);
     }
 
 
-    public Optional<Mantenimiento> findByProject(Proyecto project){
-        return mantRepo.findByProject(project);
+    @Override
+    public Optional<Mantenimiento> findMantByProyecto(Proyecto proyecto){
+        return mantRepo.findByProyecto(proyecto);
     }
 
 
+    @Override
     public List<Mantenimiento> findMants(){
         return mantRepo.findAll();
     }
 
 
+    @Override
     public Mantenimiento updateMant(Long id, Mantenimiento mant){
         Mantenimiento exist= mantRepo.findById(id)
         .orElseThrow(()-> new RuntimeException("Mantence not found, bich"));
 
-        exist.setPlanType(mant.getPlanType());
-        exist.setMonthPrice(mant.getMonthPrice());
+        exist.setTipoPlan(mant.getTipoPlan());
+        exist.setPrecioMes(mant.getPrecioMes());
         exist.setActive(mant.isActive());
         return mantRepo.save(exist);
     }
 
 
+    @Override
     public void deleteMant(Long id){
         mantRepo.deleteById(id);
     }

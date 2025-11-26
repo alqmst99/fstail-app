@@ -16,33 +16,33 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-    private String lastName;
+    private String nombre;
+    private String apellido;
     private String email;
-    private String phone;
-    private String enterprice;
-    private String country;
-    private String city;
+    private String telefono;
+    private String empresa;
+    private String pais;
+    private String ciudad;
 
-    // one to many projects with clients
+    // one to many proyectos with clients
     @OneToMany
-    private List<Proyecto> projects;
+    private List<Proyecto> proyectos;
 
     // Contructors ars and all
 
-    public Cliente(Long id, String name, String lastName, String email, String phone, String enterprice, String country,
-            String city) {
+    public Cliente(Long id, String nombre, String apellido, String email, String telefono, String empresa, String pais,
+            String ciudad) {
         this.id = id;
-        this.name = name;
-        this.lastName = lastName;
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.email = email;
-        this.phone = phone;
-        this.enterprice = enterprice;
-        this.country = country;
-        this.city = city;
+        this.telefono = telefono;
+        this.empresa = empresa;
+        this.pais = pais;
+        this.ciudad = ciudad;
     }
 
-    private Cliente() {
+    public Cliente() {
     }
 
     // Getters and Setters
@@ -62,31 +62,31 @@ public class Cliente {
     }
 
     /**
-     * @return String return the name
+     * @return String return the nombre
      */
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
     /**
-     * @param name the name to set
+     * @param nombre the nombre to set
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     /**
-     * @return String return the lastName
+     * @return String return the apellido
      */
-    public String getLastName() {
-        return lastName;
+    public String getApellido() {
+        return apellido;
     }
 
     /**
-     * @param lastName the lastName to set
+     * @param apellido the apellido to set
      */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     /**
@@ -104,59 +104,59 @@ public class Cliente {
     }
 
     /**
-     * @return String return the phone
+     * @return String return the telefono
      */
-    public String getPhone() {
-        return phone;
+    public String getTelefono() {
+        return telefono;
     }
 
     /**
-     * @param phone the phone to set
+     * @param telefono the telefono to set
      */
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     /**
-     * @return String return the enterprice
+     * @return String return the empresa
      */
-    public String getEnterprice() {
-        return enterprice;
+    public String getEmpresa() {
+        return empresa;
     }
 
     /**
-     * @param enterprice the enterprice to set
+     * @param empresa the empresa to set
      */
-    public void setEnterprice(String enterprice) {
-        this.enterprice = enterprice;
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
     }
 
     /**
-     * @return String return the country
+     * @return String return the pais
      */
-    public String getCountry() {
-        return country;
+    public String getPais() {
+        return pais;
     }
 
     /**
-     * @param country the country to set
+     * @param pais the pais to set
      */
-    public void setCountry(String country) {
-        this.country = country;
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
     /**
-     * @return String return the city
+     * @return String return the ciudad
      */
-    public String getCity() {
-        return city;
+    public String getCiudad() {
+        return ciudad;
     }
 
     /**
-     * @param city the city to set
+     * @param ciudad the ciudad to set
      */
-    public void setCity(String city) {
-        this.city = city;
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 
 }

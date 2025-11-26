@@ -10,7 +10,7 @@ public interface InformeService {
      Informe crearInforme(Informe info);
     Optional<Informe> findInfoById(Long id);
     List<Informe> findInfos();
-    List<Informe> findByProject(Proyecto project);
+    List<Informe> findByProyecto(Proyecto proyecto);
     Informe updateInfo (Long id, Informe info);
     void deleteInfo(Long id);
 }

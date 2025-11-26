@@ -8,6 +8,6 @@ import com.fstail.fstail_admin.model.Mantenimiento;
 import com.fstail.fstail_admin.model.Proyecto;
 
 public interface MantenimientoRepo extends JpaRepository <Mantenimiento, Long> {
-Optional <Mantenimiento> findByProject(Proyecto project);
+Optional <Mantenimiento> findByProyecto(Proyecto proyecto);
 
 }

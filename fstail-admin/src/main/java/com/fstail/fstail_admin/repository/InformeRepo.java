@@ -8,5 +8,5 @@ import com.fstail.fstail_admin.model.Informe;
 import com.fstail.fstail_admin.model.Proyecto;
 
 public interface InformeRepo extends JpaRepository <Informe, Long> {
-List<Informe> findByProject(Proyecto project);
+List<Informe> findByProyecto(Proyecto proyecto);
 }

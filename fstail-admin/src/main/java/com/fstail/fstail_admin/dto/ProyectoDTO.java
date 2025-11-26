@@ -1,59 +1,28 @@
-package com.fstail.fstail_admin.model;
+package com.fstail.fstail_admin.dto;
 
 import java.time.LocalDate;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "Projects")
-public class Proyecto {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProyectoDTO {
     private Long id;
+    private Long clientId;
 
     private String nombreProyecto;
     private String tipoServicio;
     private String estado;
     private LocalDate startedAt;
     private LocalDate finishedAt;
+
     private Double precio;
     private Integer dias;
+
+    // checklist
     private List<String> pasos;
 
-
-
-    // many to one, many projects and one cliente
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
-
-
-    // one to one maintance per projects
-    @OneToOne(mappedBy = "project", cascade = CascadeType.ALL)
-    private Mantenimiento mantenimiento;
-
-    // one to many one project many informes
-    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
-    private List<Informe> informe;
-
-    // contructor arg and all
-    public Proyecto() {
-    }
-
-    public Proyecto(Long id, String nombreProyecto, String tipoServicio, String estado, LocalDate startedAt,
-            LocalDate finishedAt, Double precio, Integer dias, List<String> pasos) {
+    public ProyectoDTO(Long id, Long clientId, String nombreProyecto, String tipoServicio, String estado,
+            LocalDate startedAt, LocalDate finishedAt, Double precio, Integer dias, List<String> pasos) {
         this.id = id;
+        this.clientId = clientId;
         this.nombreProyecto = nombreProyecto;
         this.tipoServicio = tipoServicio;
         this.estado = estado;
@@ -64,7 +33,10 @@ public class Proyecto {
         this.pasos = pasos;
     }
 
-    // Getters and Setters
+    public ProyectoDTO() {
+    }
+
+    // Getters & Setters
 
     public Long getId() {
         return id;
@@ -72,6 +44,14 @@ public class Proyecto {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public String getNombreProyecto() {
@@ -114,22 +94,6 @@ public class Proyecto {
         this.finishedAt = finishedAt;
     }
 
-    public Mantenimiento getMantenimiento() {
-        return mantenimiento;
-    }
-
-    public void setMantenimiento(Mantenimiento mantenimiento) {
-        this.mantenimiento = mantenimiento;
-    }
-
-    public List<Informe> getInforme() {
-        return informe;
-    }
-
-    public void setInforme(List<Informe> informe) {
-        this.informe = informe;
-    }
-
     public Double getPrecio() {
         return precio;
     }
@@ -146,14 +110,7 @@ public class Proyecto {
         this.dias = dias;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-        public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-        public List<String> getPasos() {
+    public List<String> getPasos() {
         return pasos;
     }
 

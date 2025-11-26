@@ -37,9 +37,9 @@ public List<Proyecto> findprojects(){
 public Proyecto Updateproject(Long id, Proyecto project){
     Proyecto existe= projectRepo.findById(id).
     orElseThrow(()-> new RuntimeException("project not found, bich"));
-    existe.setProjectName(project.getProjectName());
-    existe.setState(project.getState());
-    existe.setServiceType(project.getServiceType());
+    existe.setNombreProyecto(project.getNombreProyecto());
+    existe.setEstado(project.getEstado());
+    existe.setTipoServicio(project.getTipoServicio());
     existe.setFinishedAt(project.getFinishedAt());
 
     return projectRepo.save(existe);

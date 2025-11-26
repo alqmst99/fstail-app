@@ -1,0 +1,22 @@
+package com.fstail.fstail_admin.enums;
+
+public enum EstadoProyecto {
+    RECEPCION,
+    BRIEFING,
+    DISEÑADO,
+    DISEÑO_UI,
+    ARMANDO_HTML,
+    ARMANDO_CSS,
+    ARMANDO_JS,
+    REACT_SETUP,
+    REACT_COMPONENTS,
+    API_DESING,
+    API_DEVELOPMENTS,
+    BD_MODELADO,
+    CREANDO_ENDPOINT,
+    INTEGRACION_FRONT_BACK,
+    TESTEANDO,
+    DEPLOY,
+    EN_PRODUCCION,
+    FINALIZADO
+}

@@ -10,7 +10,7 @@ import com.fstail.fstail_admin.model.Proyecto;
 public interface MantenimientoService {
     Mantenimiento crearMantenimiento(Mantenimiento mant);
     Optional<Mantenimiento> findMantById(Long id);
-    Optional<Mantenimiento> findMantByProject(Proyecto project);
+    Optional<Mantenimiento> findMantByProyecto(Proyecto proyecto);
     List<Mantenimiento> findMants();
     Mantenimiento updateMant (Long id, Mantenimiento mant);
     void deleteMant(Long id);

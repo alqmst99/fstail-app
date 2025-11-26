@@ -8,7 +8,7 @@ import com.fstail.fstail_admin.model.Cliente;
 import com.fstail.fstail_admin.model.Proyecto;
 
 public interface ProyectoRepo extends JpaRepository <Proyecto, Long> {
-List<Proyecto> findByCliente(Cliente client);
+List<Proyecto> findByCliente(Cliente cliente);
 List<Proyecto> findByEstado(String estado);
 
 }

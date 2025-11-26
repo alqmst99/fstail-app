@@ -16,16 +16,16 @@ public class Informe {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
-    private String description;
+    private String titulo;
+    private String descripcion;
     private LocalDate creationAt;
     private String pdfFile;
    
 
 
     @ManyToOne
-    @JoinColumn(name = "project_id")
-    private Proyecto project;
+    @JoinColumn(name = "proyecto_id")
+    private Proyecto proyecto;
 
 
     //Contrutors arg and all
@@ -34,10 +34,10 @@ public class Informe {
  public Informe() {
     }
 
-        public Informe(Long id, String title, String description, LocalDate creationAt, String pdfFile) {
+        public Informe(Long id, String titulo, String descripcion, LocalDate creationAt, String pdfFile) {
         this.id = id;
-        this.title = title;
-        this.description = description;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
         this.creationAt = creationAt;
         this.pdfFile = pdfFile;
     }
@@ -54,20 +54,20 @@ public class Informe {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public LocalDate getCreationAt() {
@@ -86,12 +86,12 @@ public class Informe {
         this.pdfFile = pdfFile;
     }
     
- public Proyecto getProject() {
-        return project;
+ public Proyecto getProyecto() {
+        return proyecto;
     }
 
-    public void setProject(Proyecto project) {
-        this.project = project;
+    public void setProyecto(Proyecto proyecto) {
+        this.proyecto = proyecto;
     }
     
 }
